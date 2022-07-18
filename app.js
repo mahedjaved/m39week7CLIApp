@@ -35,7 +35,11 @@ const app = (argv) => {
   let arg = argv.slice(2, argv.length);
   const newMovie = new Movie();
   newMovie.add(arg);
-  console.log(`This is the movie : ${newMovie}`);
+
+  // console log the movies and et al.
+  console.log(`This is the movie : ${newMovie.object.movie}`);
+  console.log(`This is the director : ${newMovie.object.director}`);
+  console.log(`This is the actor : ${newMovie.object.actor}`);
 
   // switch (argv[2]) {
   //   case "add":

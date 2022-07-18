@@ -3,7 +3,7 @@ const Movie = require("./utils");
 console.log("Hello World!");
 
 // shows where node is installed
-console.log(process.argv);
+// console.log(process.argv);
 
 // example of building logic around terminal
 // if (process.argv[2] === "steve") {
@@ -31,24 +31,26 @@ console.log(process.argv);
 
 // TASK 1:
 const app = (argv) => {
-  switch (argv[2]) {
-    case "add":
-      // add the movie
-      // const movie = argv[3];
-      // console.log(`Is your movie : ${movie}`);
+  // console.log(argv.slice(2));
+  let arg = argv.slice(2, argv.length);
+  const newMovie = new Movie();
+  newMovie.add(arg);
+  console.log(`This is the movie : ${newMovie}`);
 
-      // add movie using class synstax
-      const newMovie = new Movie(argv[3], argv[4]);
+  // switch (argv[2]) {
+  //   case "add":
+  //     // add the movie
+  //     // const movie = argv[3];
+  //     // console.log(`Is your movie : ${movie}`);
+  //     const newMovie = new Movie(argv[3], argv[4]);
+  //     newMovie.add();
 
-      // add to the new movie
-      newMovie.add();
+  //     break;
 
-      break;
-
-    default:
-      console.log("You didnt add a movie");
-      break;
-  }
+  //   default:
+  //     console.log("You didnt add a movie");
+  //     break;
+  // }
 };
 
 app(process.argv);
